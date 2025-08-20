@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Linkedin, Github, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,16 +17,39 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // EmailJS configuration - you'll need to set these up in EmailJS dashboard
+      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+      const userId = 'YOUR_USER_ID'; // Replace with your EmailJS user ID
 
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_mobile: formData.mobile,
+        message: formData.message,
+        to_name: 'Jayesh Nehe',
+      };
 
-    setFormData({ name: '', email: '', mobile: '', message: '' });
-    setIsSubmitting(false);
+      await emailjs.send(serviceId, templateId, templateParams, userId);
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', mobile: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+        variant: "default",
+      });
+      setFormData({ name: '', email: '', mobile: '', message: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

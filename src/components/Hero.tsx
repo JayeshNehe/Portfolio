@@ -1,5 +1,4 @@
-import { ArrowRight, Download, MapPin } from 'lucide-react';
-import jayeshHeadshot from '@/assets/jayesh-headshot.jpg';
+import { Download, User, MapPin } from 'lucide-react';
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -48,18 +47,19 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
-                onClick={scrollToContact}
-                className="btn-primary group"
-              >
-                Get In Touch
-                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button 
                 onClick={scrollToProjects}
-                className="btn-secondary"
+                className="btn-primary"
               >
                 View My Work
               </button>
+              <a
+                href="/resume.pdf"
+                download
+                className="btn-secondary inline-flex items-center justify-center"
+              >
+                <Download size={20} className="mr-2" />
+                Download CV
+              </a>
             </div>
 
             {/* Quick Stats */}
@@ -69,7 +69,7 @@ const Hero = () => {
                 <div className="text-sm text-gray-600">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary font-poppins">2+</div>
+                <div className="text-2xl font-bold text-primary font-poppins">5+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
@@ -85,14 +85,10 @@ const Hero = () => {
               {/* Background Glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent-green/20 rounded-3xl blur-3xl transform rotate-3"></div>
               
-              {/* Main Image Container */}
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-subtle">
-                  <img
-                    src={jayeshHeadshot}
-                    alt="Jayesh Nehe - Full-Stack Developer"
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-                  />
+              {/* Main Avatar Container */}
+              <div className="relative bg-white rounded-3xl p-8 shadow-xl float-animation">
+                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent-green/20 flex items-center justify-center">
+                  <User className="w-32 h-32 text-primary/80 pulse-glow" />
                 </div>
                 
                 {/* Floating Card */}

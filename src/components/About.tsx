@@ -41,8 +41,8 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              I'm a dedicated Full-Stack Developer and Computer Science graduate with a passion for learning 
-              new technologies and building innovative web solutions. Currently pursuing my Master's degree 
+              I'm a dedicated Full-Stack Developer and Computer Science graduate with 5+ years of experience 
+              in building innovative web solutions. Currently pursuing my Master's degree 
               in Computer Applications, I combine academic excellence with practical experience to deliver 
               exceptional digital experiences.
             </p>

@@ -118,17 +118,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <button className="btn-primary">
-                    <ExternalLink size={16} className="mr-2" />
-                    View Project
-                  </button>
-                  <button className="btn-secondary">
-                    <Github size={16} className="mr-2" />
-                    Source Code
-                  </button>
-                </div>
               </div>
 
               {/* Project Visual */}

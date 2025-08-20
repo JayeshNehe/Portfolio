@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'testimonials', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -28,7 +29,6 @@ const Navigation = () => {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
-    { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' }
   ];
 
@@ -64,25 +64,19 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <ThemeToggle />
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
             <button
-              onClick={() => scrollToSection('#contact')}
-              className="btn-primary"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              Hire Me
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
 
         {/* Mobile Navigation */}
@@ -102,14 +96,6 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <div className="px-4 pt-4">
-                <button
-                  onClick={() => scrollToSection('#contact')}
-                  className="btn-primary w-full"
-                >
-                  Hire Me
-                </button>
-              </div>
             </div>
           </div>
         )}

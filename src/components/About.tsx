@@ -5,7 +5,7 @@ const About = () => {
     {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Education Excellence",
-      description: "MSc Computer Applications from Fergusson College, Pune (2025) and BCA from SN Arts College (2023)"
+      description: "MSc Computer Applications from Fergusson College, Pune (2025) and BCA from SN Arts College, Sangamner (2023)"
     },
     {
       icon: <Code className="w-6 h-6" />,
@@ -41,15 +41,15 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              I'm a dedicated Full-Stack Developer and Computer Science graduate with 5+ years of experience 
-              in building innovative web solutions. Currently pursuing my Master's degree 
+              I'm a dedicated Full-Stack Developer and Computer Science graduate with 5+ years of experience of coding 
+              and building innovative web solutions. Master's degree 
               in Computer Applications, I combine academic excellence with practical experience to deliver 
               exceptional digital experiences.
             </p>
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               My journey in technology has been driven by curiosity and a commitment to continuous learning. 
-              From developing event management systems to creating food donation platforms, I enjoy tackling 
+              From developing multiple projects, I enjoy tackling 
               real-world problems with clean, efficient code.
             </p>
 

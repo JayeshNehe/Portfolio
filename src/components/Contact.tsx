@@ -19,9 +19,9 @@ const Contact = () => {
 
     try {
       // EmailJS configuration - you'll need to set these up in EmailJS dashboard
-      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
-      const userId = 'YOUR_USER_ID'; // Replace with your EmailJS user ID
+      const serviceId = 'service_b9sfi8p'; // Replace with your EmailJS service ID
+      const templateId = 'template_o1g639c'; // Replace with your EmailJS template ID
+      const userId = '-mHDfqhZbU7qBy_ME'; // Replace with your EmailJS user ID
 
       const templateParams = {
         from_name: formData.name,

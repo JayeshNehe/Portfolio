@@ -147,9 +147,9 @@ const Footer = () => {
         <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© 2024 Jayesh Nehe. Built with</span>
-              <Heart size={16} className="text-red-500 fill-current" />
-              <span>using React.js & Tailwind CSS</span>
+              <span>© 2025 Jayesh Nehe</span>
+              
+              <span></span>
             </div>
             
             <div className="flex items-center gap-6">
@@ -157,7 +157,7 @@ const Footer = () => {
                 onClick={() => scrollToSection('#contact')}
                 className="text-sm text-gray-400 hover:text-white transition-colors"
               >
-                Hire Me
+            
               </button>
               
               <button

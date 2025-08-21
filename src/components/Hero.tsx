@@ -30,7 +30,7 @@ const Hero = () => {
             </p>
             
             <p className="text-base md:text-lg text-gray-300 mb-12 max-w-lg mx-auto lg:mx-0 leading-relaxed fade-in-up" style={{ animationDelay: '0.3s' }}>
-              I build innovative web solutions using modern technologies like React.js, Node.js, and MySQL. 
+              I build innovative web solutions using modern technologies. 
               Let's bring your ideas to life with clean, efficient code and exceptional user experiences.
             </p>
 

@@ -25,53 +25,53 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-gray-800">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="fade-in-left">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 hover:scale-105 transition-transform">
               <Users size={16} />
               About Me
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-poppins">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-6 font-poppins">
               Passionate About Building 
               <span className="text-gradient block">Digital Solutions</span>
             </h2>
             
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               I'm a dedicated Full-Stack Developer and Computer Science graduate with 5+ years of experience 
               in building innovative web solutions. Currently pursuing my Master's degree 
               in Computer Applications, I combine academic excellence with practical experience to deliver 
               exceptional digital experiences.
             </p>
 
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               My journey in technology has been driven by curiosity and a commitment to continuous learning. 
               From developing event management systems to creating food donation platforms, I enjoy tackling 
               real-world problems with clean, efficient code.
             </p>
 
             {/* Contact Info */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-              <h3 className="font-semibold text-gray-900 mb-4">Get In Touch</h3>
+            <div className="bg-gray-700/50 rounded-2xl p-6 mb-8 border border-gray-600 hover:bg-gray-700 transition-colors">
+              <h3 className="font-semibold text-gray-100 mb-4">Get In Touch</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-600">📧</span>
-                  <a href="mailto:jayeshbnehe@gmail.com" className="text-primary hover:underline">
+                  <span className="text-gray-400">📧</span>
+                  <a href="mailto:jayeshbnehe@gmail.com" className="text-primary hover:underline transition-colors">
                     jayeshbnehe@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-600">📱</span>
-                  <a href="tel:+919762070805" className="text-primary hover:underline">
+                  <span className="text-gray-400">📱</span>
+                  <a href="tel:+919762070805" className="text-primary hover:underline transition-colors">
                     +91 9762070805
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-gray-600">📍</span>
-                  <span className="text-gray-700">Pune, Maharashtra</span>
+                  <span className="text-gray-400">📍</span>
+                  <span className="text-gray-300">Pune, Maharashtra</span>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/jayesh-nehe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary text-sm"
+                className="bg-gray-700 hover:bg-gray-600 text-gray-100 border border-gray-600 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 text-sm"
               >
                 LinkedIn Profile
               </a>
@@ -90,7 +90,7 @@ const About = () => {
                 href="https://github.com/JayeshNehe"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary text-sm"
+                className="bg-gray-700 hover:bg-gray-600 text-gray-100 border border-gray-600 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 text-sm"
               >
                 GitHub Profile
               </a>
@@ -103,16 +103,16 @@ const About = () => {
               {highlights.map((item, index) => (
                 <div 
                   key={index}
-                  className="card-hover group"
+                  className="bg-gray-700/50 rounded-2xl p-6 hover:bg-gray-700 transition-all duration-300 hover:scale-105 border border-gray-600 group bounce-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform pulse-glow">
                     {item.icon}
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 font-poppins">
+                  <h3 className="font-semibold text-gray-100 mb-2 font-poppins">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -120,8 +120,8 @@ const About = () => {
             </div>
 
             {/* Quote */}
-            <div className="mt-8 bg-gradient-hero text-white rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 opacity-10">
+            <div className="mt-8 bg-gradient-hero text-white rounded-2xl p-8 relative overflow-hidden float-animation">
+              <div className="absolute top-0 right-0 opacity-10 rotate-slow">
                 <div className="text-6xl font-bold">"</div>
               </div>
               <p className="text-lg font-medium mb-4 relative z-10">

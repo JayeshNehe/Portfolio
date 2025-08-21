@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +7,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'achievements', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -29,6 +28,7 @@ const Navigation = () => {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
+    { href: '#achievements', label: 'Achievements' },
     { href: '#contact', label: 'Contact' }
   ];
 
@@ -41,12 +41,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800/90 backdrop-blur-md border-b border-gray-700 shadow-lg">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="font-poppins font-bold text-xl md:text-2xl text-gray-900">
-            Jayesh<span className="text-gradient">.</span>
+          <div className="font-poppins font-bold text-xl md:text-2xl text-gray-100 hover:scale-105 transition-transform">
+            Jayesh Nehe's<span className="text-gradient"> Portfolio</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -55,23 +55,24 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link ${
+                className={`relative text-gray-300 hover:text-primary font-medium transition-all duration-300 hover:scale-105 ${
                   activeSection === item.href.substring(1) 
                     ? 'text-primary' 
-                    : 'text-gray-700'
+                    : ''
                 }`}
               >
                 {item.label}
+                <div className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === item.href.substring(1) ? 'w-full' : 'w-0'
+                }`}></div>
               </button>
             ))}
-            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
             <button
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-700 transition-colors text-gray-100"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,17 +82,18 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4">
+          <div className="md:hidden bg-gray-800 border-t border-gray-700 py-4 slide-in-bottom">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-left px-4 py-2 rounded-lg transition-colors ${
+                  className={`text-left px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-700 hover:scale-105 ${
                     activeSection === item.href.substring(1)
-                      ? 'text-primary bg-gray-50'
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'text-primary bg-gray-700'
+                      : 'text-gray-300'
                   }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.label}
                 </button>
